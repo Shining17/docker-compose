@@ -22,10 +22,10 @@ L nginx    - nginx기반(리눅스기반) 단독구성, 프록시 담당, 모든
 # 도커 컴포즈 구성
 ```
 # 기존 자원 삭제
-docker-compose down
+docker compose down
 
 # 컴포즈 기반 구성 -> docker-compose.yml 읽어서 구성
-docker-compose up -d
+docker compose up -d
 ```
 
 
