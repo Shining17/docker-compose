@@ -53,7 +53,24 @@ jobs:
                 docker build -t shining17/demo_frontend ./frontend
                 docker push shining17/demo_frontend
 
-            # eC2 서버로 필요 파일 업로드(YML, nginx/*.conf)
+            # EC2 서버로 필요 파일 업로드(YML, nginx/*.conf)
+            # EC2 생성 -> 탄력적 IP 연결 -> 활성화 이후
+            # EC2 접속
+            # docker-compose.yml , ./nginx/default.conf 업로드
+            # 타겟 : /home/ubuntu
+            - name: EC2 서버로 필요 파일 업로드(YML, nginx/*.conf)
+              uses: appleboy/scp-action@v0.1.7
+              # 업로드 대상이 n개이면 |로 구성
+              with:
+                host: ${{secrets.EC2_HOST}}
+                username: ${{secrets.EC2_USERNAME}}
+                key: ${{secrets.EC2_KEY}}
+                source: |
+                  ./docker-compose.yml, 
+                  ./nginx/default.conf
+                target: /home/ubuntu
 
     #deploy:
         # 도커 컴포즈 진행
+
+        # 시스템 패키지 업데이트
