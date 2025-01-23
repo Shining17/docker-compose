@@ -88,3 +88,13 @@ jobs:
             script: |
               sudo docker compose down
               sudo docker compose up -d
+
+# EC2 확인
+# sudo docker container ps
+# 4개 서비스가 가동중인지 확인
+# 만약 4개가 아니라면 
+# sudo docker compose up -d
+# 체크
+# sudo docker container ps
+# 4개 서비스가 가동중인지 확인
+# ip 접속 확인
