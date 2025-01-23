@@ -82,7 +82,7 @@ jobs:
             host: ${{secrets.EC2_HOST}}
             username: ${{secrets.EC2_USERNAME}}
             key: ${{secrets.EC2_KEY}}
-            script-stop: true
+            script_stop: true
             # 이미지를 갱신하지는 않는다. -> 도커컴포즈 파일에 기술하여 버전관리 할 수 있다. 
             # 이미지에 TAG를 기입하여 버전을 관리한다면 매번 이미지를 갱신해야 한다.
             script: |
